@@ -15,8 +15,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: python -m test.py
+          name: "Install Python and Say Hello"
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y python3
+            python3 -m test.pyname: "Say hello"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
